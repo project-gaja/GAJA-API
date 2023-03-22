@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="commonMapper">  
+
+
+    <!--회원 정보 조회-->
+    <select id="selectMemInfo">
+        SELECT * FROM GAJADB.T_MEM_INFO_M;
+    </select>
+
+    <!--회원 정보 등록-->
+    <insert id="insertMemInfo">
+        INSERT INTO GAJADB.T_MEM_INFO_M 
+        (
+            id,
+            password,
+            name
+        )
+        VALUES(
+            #{id},
+            #{password},
+            #{name}
+        )
+
+    </insert>
+
+</mapper>
