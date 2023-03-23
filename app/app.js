@@ -24,7 +24,7 @@ app.use(express.static(`${__dirname}/src/public`));
 
 // Mapper 등록
 const mybatisMapper = require('mybatis-mapper');
-mybatisMapper.createMapper(['./mybatis-mapper/common.xml']);
+mybatisMapper.createMapper(['./mybatis-mapper/commonMapper.xml']);
 global.mapper = mybatisMapper;
 
 // DB 연결설정

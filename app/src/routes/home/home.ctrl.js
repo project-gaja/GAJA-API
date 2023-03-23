@@ -1,46 +1,25 @@
 "use strict";
+const com     = require("./../../common/common.js");
+const service = require("./home.service");
 
-const healthCheck = {
-  register : (req, res) => {
+const  healthCheck = {
+  register : async (req, res) => {
       let param = {
           data1 : req.body.data1
       }
+       
+      var result = await service.selectMemberInfo(res,param);
 
-      let result = {
-          success : "",
-          msg : ""
-      }        
-      
-      // 인증 완료
-      const db = require('../../../config/DBconnection');
-      const conn = db.init();      
-      console.log("data1 :: "+ param.data1);
-      
 
-      let format = {language : 'sql', indent : ''};
-      let query = global.mapper.getStatement('commonMapper', 'selectMemInfo', param, format);
-
-      console.log("sql :: " + query);
-      conn.query(query, function (error, rows) {
-      
-      //Error
-      if (rows == '') {
-          result.success = false;
-          result.msg = "검색된 정보가 없습니다.";
-          res.status(400).json(result);
-          return;
-      }
-      //SUCCESS           
-          result.success = true;
-          result.msg = "success";
-          result.content = rows;
-          res.json(result);
-      });     
+      console.log("Controller result  : "  + result);
+      if (result == "OKAY"){
+        console.log("성공");
+      }else if (result == "FAIL"){
+        console.log("실패");
+      } 
   }
-
-  
 };
 
 module.exports = {
-  healthCheck
+    healthCheck
 };
