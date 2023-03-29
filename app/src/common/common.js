@@ -28,7 +28,7 @@ module.exports = {
   
     /**
      * (DAO) Data Access Object 
-     * ex) param1 : parameter, param2 : namespace, param3 : sql id)
+     * ex) param1 : parameter, param2 : namespace, param3 : sql id
      * @Method       	: selectOne
      * @date   		    : 2023.03.23
      * @author   		: hosung98
@@ -49,15 +49,14 @@ module.exports = {
             //Error
             if (typeof rows == "undefined" || rows == null || rows == "") {
               resolve("FAIL");
-              logger.error("DAO result : " + result);
+              logger.error("DAO result : " + JSON.stringify(rows));
             //SUCCESS 
             } else {
-              resolve("OKAY");
-              logger.info("DAO result : " + result);
+              resolve(rows);
+              logger.info("DAO result : " + JSON.stringify(rows));
             }
           });
         });
-        
         
         return result;
       }

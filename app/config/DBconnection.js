@@ -1,9 +1,10 @@
 const mysql = require('mysql');
+const logger = require('log4js').getLogger('INFO');
 
 //DB info
 const dbInfo = {
-    host: '43.201.121.190',
-    port: '51211',
+    host: '13.125.250.52',
+    port: '52001',
     user: 'autobit',
     password: 'autobit1!',
     database: 'GAJADB'
@@ -17,11 +18,10 @@ let dbcon = {
 	conn:function(con) {
 		con.connect(function(err){
 			if(err) {
-				console.log("mysql connection error : " + err);
+				logger.error("Mysql Connection Error : " + err);
 				setTimeout(init, 2000);
 			} else {
-				//console.log(dbInfo.host + ":" + port);
-				console.log("mysql connection sucessfully");
+				logger.info("Mysql Connection Sucessfully")
 			}
 		})
 	}

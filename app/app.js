@@ -30,8 +30,8 @@ global.mapper = mybatisMapper;
 // DB 연결설정
 const mysql = require('mysql');            //mysql 모듈 로드
 var db = require('./config/DBconnection'); //db 연결 모듈 호출
-//var conn = db.init();                    //db 모듈 커넥션 실행
-//db.conn(conn);                           //db 연결 확인
+var conn = db.init();                    //db 모듈 커넥션 실행
+db.conn(conn);                           //db 연결 확인
 
 // log4js 설정
 const path = require('path');

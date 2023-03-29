@@ -11,16 +11,13 @@ const  healthCheck = {
       }
        
       var result = await service.selectMemberInfo(res,param);
-      if (result == "OKAY"){
-        logger.info('OKAY');
-        res.status(200).json(com.returnMsg(true,"성공",result));
-      }else if (result == "FAIL"){
+      if (result == "FAIL"){
         logger.error('ERROR');
-        res.status(400).json(com.returnMsg(false,"실패",result));
-      } 
-      
-
-      return false;
+        res.status(400).json(com.returnMsg(false,"실패",result));        
+      }else {
+        logger.info('OKAY');        
+        res.status(200).json(com.returnMsg(true,"성공",result));
+      }
   }
 };
 
