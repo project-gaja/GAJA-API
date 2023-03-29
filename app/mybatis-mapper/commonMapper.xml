@@ -5,7 +5,12 @@
 
     <!--회원 정보 조회-->
     <select id="selectMemInfo">
-        SELECT * FROM GAJADB.T_MEM_INFO_M;
+        SELECT             
+            ID,
+            PASSWORD,
+            NAME
+        FROM 
+            GAJADB.T_MEM_INFO_M;
     </select>
 
     <!--회원 정보 등록-->
