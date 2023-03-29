@@ -1,6 +1,7 @@
 "use strict";
-const com     = require("./../../common/common.js");
-const service = require("./home.service");
+const com     = require("../../common/common");
+const service = require("../service/home.service");
+const logger = require('log4js').getLogger('Controller');
 
 const  healthCheck = {
   register : async (req, res) => {
@@ -9,14 +10,15 @@ const  healthCheck = {
       }
        
       var result = await service.selectMemberInfo(res,param);
+      logger.info("Controller result  : "  + result);
 
-
-      console.log("Controller result  : "  + result);
       if (result == "OKAY"){
-        console.log("성공");
+        logger.info('OKAY');
       }else if (result == "FAIL"){
-        console.log("실패");
+        logger.error('ERROR');
       } 
+
+      
   }
 };
 

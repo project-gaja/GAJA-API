@@ -1,0 +1,156 @@
+[2023-03-29T09:47:48.901] [INFO] logTest - 서버 가동
+[2023-03-29T09:48:14.269] [INFO] logTest - 서버 가동
+[2023-03-29T09:48:34.398] [INFO] INFO - 서버 가동
+[2023-03-29T09:48:42.049] [INFO] INFO - 서버 가동
+[2023-03-29T09:49:20.822] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:49:25.383] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:49:50.771] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:49:56.401] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:50:05.871] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:50:26.110] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:50:38.068] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:51:03.409] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:51:29.437] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:51:34.203] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:51:38.880] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:51:58.392] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:52:19.825] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:52:30.283] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:52:47.552] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:52:58.560] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:53:03.784] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:53:35.879] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:53:37.746] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:53:49.448] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:53:49.646] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:53:49.942] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:53:50.040] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:53:51.748] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:53:51.848] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:53:57.820] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:54:09.461] [INFO] COMMON - ================================================
+[2023-03-29T09:54:09.461] [INFO] COMMON - SQL LOG: SELECT
+  *
+FROM
+  GAJADB.T_MEM_INFO_M;
+[2023-03-29T09:54:09.461] [INFO] COMMON - ================================================
+[2023-03-29T09:54:10.093] [INFO] COMMON - DAO result : FAIL
+[2023-03-29T09:54:10.095] [INFO] service - Service result: FAIL
+[2023-03-29T09:54:10.095] [INFO] Controller - Controller result  : FAIL
+[2023-03-29T09:54:10.095] [ERROR] Controller - ERROR
+[2023-03-29T09:57:34.506] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:57:37.894] [INFO] COMMON - ================================================
+[2023-03-29T09:57:37.894] [INFO] COMMON - 
+SQL LOG: SELECT
+  *
+FROM
+  GAJADB.T_MEM_INFO_M;
+[2023-03-29T09:57:37.894] [INFO] COMMON - ================================================
+[2023-03-29T09:57:37.904] [INFO] COMMON - DAO result : FAIL
+[2023-03-29T09:57:37.905] [INFO] service - Service result: FAIL
+[2023-03-29T09:57:37.905] [INFO] Controller - Controller result  : FAIL
+[2023-03-29T09:57:37.905] [ERROR] Controller - ERROR
+[2023-03-29T09:57:45.444] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:57:53.296] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:57:54.723] [INFO] COMMON - ================================================
+[2023-03-29T09:57:54.723] [INFO] COMMON - SQL LOG: SELECT
+  *
+FROM
+  GAJADB.T_MEM_INFO_M;
+[2023-03-29T09:57:54.723] [INFO] COMMON - ================================================
+[2023-03-29T09:57:54.733] [INFO] COMMON - DAO result : FAIL
+[2023-03-29T09:57:54.733] [INFO] service - Service result: FAIL
+[2023-03-29T09:57:54.733] [INFO] Controller - Controller result  : FAIL
+[2023-03-29T09:57:54.733] [ERROR] Controller - ERROR
+[2023-03-29T09:58:00.500] [INFO] COMMON - ================================================
+[2023-03-29T09:58:00.501] [INFO] COMMON - SQL LOG: SELECT
+  *
+FROM
+  GAJADB.T_MEM_INFO_M;
+[2023-03-29T09:58:00.501] [INFO] COMMON - ================================================
+[2023-03-29T09:58:00.510] [INFO] COMMON - DAO result : FAIL
+[2023-03-29T09:58:00.510] [INFO] service - Service result: FAIL
+[2023-03-29T09:58:00.510] [INFO] Controller - Controller result  : FAIL
+[2023-03-29T09:58:00.510] [ERROR] Controller - ERROR
+[2023-03-29T09:58:04.309] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:59:05.241] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T09:59:25.049] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:00:00.789] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:10:43.452] [INFO] COMMON - [commonMapper.selectMemInfo] ==> parameters :[object Object]
+[2023-03-29T10:10:43.452] [INFO] COMMON - SQL LOG: SELECT
+  *
+FROM
+  GAJADB.T_MEM_INFO_M;
+[2023-03-29T10:10:43.452] [INFO] COMMON - ================================================
+[2023-03-29T10:10:43.462] [INFO] COMMON - DAO result : FAIL
+[2023-03-29T10:10:43.463] [INFO] service - Service result: FAIL
+[2023-03-29T10:10:43.463] [INFO] Controller - Controller result  : FAIL
+[2023-03-29T10:10:43.463] [ERROR] Controller - ERROR
+[2023-03-29T10:11:23.961] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:11:40.855] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:11:42.338] [INFO] COMMON - [commonMapper.selectMemInfo] ==> parameters :[object Object]
+[2023-03-29T10:11:42.338] [INFO] COMMON - SQL LOG: SELECT
+  *
+FROM
+  GAJADB.T_MEM_INFO_M;
+[2023-03-29T10:11:42.338] [INFO] COMMON - ================================================
+[2023-03-29T10:11:42.347] [INFO] COMMON - DAO result : FAIL
+[2023-03-29T10:11:42.347] [INFO] service - Service result: FAIL
+[2023-03-29T10:11:42.347] [INFO] Controller - Controller result  : FAIL
+[2023-03-29T10:11:42.347] [ERROR] Controller - ERROR
+[2023-03-29T10:12:30.859] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:12:37.378] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:12:40.416] [INFO] COMMON - [commonMapper.selectMemInfo] ==> parameters :{}
+[2023-03-29T10:12:40.417] [INFO] COMMON - SQL LOG: SELECT
+  *
+FROM
+  GAJADB.T_MEM_INFO_M;
+[2023-03-29T10:12:40.417] [INFO] COMMON - ================================================
+[2023-03-29T10:12:40.427] [INFO] COMMON - DAO result : FAIL
+[2023-03-29T10:12:40.427] [INFO] service - Service result: FAIL
+[2023-03-29T10:12:40.427] [INFO] Controller - Controller result  : FAIL
+[2023-03-29T10:12:40.427] [ERROR] Controller - ERROR
+[2023-03-29T10:13:46.228] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:13:47.762] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:13:50.729] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:13:52.151] [INFO] COMMON - [commonMapper.selectMemInfo] ==> parameters :{}
+[2023-03-29T10:13:52.151] [INFO] COMMON - [commonMapper.selectMemInfo] SQL QUERY ==> 
+SELECT
+  *
+FROM
+  GAJADB.T_MEM_INFO_M;
+[2023-03-29T10:13:52.161] [INFO] COMMON - DAO result : FAIL
+[2023-03-29T10:13:52.162] [INFO] service - Service result: FAIL
+[2023-03-29T10:13:52.162] [INFO] Controller - Controller result  : FAIL
+[2023-03-29T10:13:52.162] [ERROR] Controller - ERROR
+[2023-03-29T10:14:40.895] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:14:42.062] [INFO] COMMON - [commonMapper.selectMemInfo] ==> parameters :{}
+[2023-03-29T10:14:42.062] [INFO] COMMON - [commonMapper.selectMemInfo] SQL QUERY ==> 
+SELECT
+  *
+FROM
+  GAJADB.T_MEM_INFO_M;
+[2023-03-29T10:14:42.072] [INFO] COMMON - DAO result : FAIL
+[2023-03-29T10:14:42.072] [INFO] service - Service result: FAIL
+[2023-03-29T10:14:42.073] [INFO] Controller - Controller result  : FAIL
+[2023-03-29T10:14:42.073] [ERROR] Controller - ERROR
+[2023-03-29T10:15:14.776] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:15:17.194] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:15:20.634] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:15:22.175] [INFO] COMMON - [commonMapper.selectMemInfo] ==> parameters :{}
+[2023-03-29T10:15:22.175] [INFO] COMMON - [commonMapper.selectMemInfo] SQL QUERY ==> 
+SELECT
+  *
+FROM
+  GAJADB.T_MEM_INFO_M;
+[2023-03-29T10:15:22.185] [ERROR] COMMON - DAO result : undefined
+[2023-03-29T10:15:22.186] [INFO] service - Service result: FAIL
+[2023-03-29T10:15:22.186] [INFO] Controller - Controller result  : FAIL
+[2023-03-29T10:15:22.186] [ERROR] Controller - ERROR
+[2023-03-29T10:15:26.687] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:15:26.882] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:15:34.923] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:15:35.867] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:15:37.463] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:16:38.838] [INFO] INFO - localhost:3001 Server start!
+[2023-03-29T10:16:58.383] [INFO] INFO - localhost:3001 Server start!
