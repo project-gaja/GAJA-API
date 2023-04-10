@@ -45,7 +45,7 @@ log4js.configure(path.join(__dirname, 'config/log4js.json'));
 // dotenv 불러오기
 require("dotenv").config();
 // 모듈 불러오기
-const mailer = require('./mailer.js');
+const mailer = require('./src/common/common.js');
 
 // 메일 전송 라우트
 app.post("/mail", (req, res) => {
