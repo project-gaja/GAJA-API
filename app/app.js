@@ -45,11 +45,11 @@ log4js.configure(path.join(__dirname, 'config/log4js.json'));
 // dotenv 불러오기
 require("dotenv").config();
 // 모듈 불러오기
-const mailer = require('./src/common/common.js');
+const mailer = require('./src/common/mailer.js');
 
 // 메일 전송 라우트
 app.post("/mail", (req, res) => {
-  console.log('메일발송');
+  console.log('mail 접속');
   const { yourname, youremail, yoursubject, yourmessage } = req.body.data;
 
   mailer(yourname, youremail, yoursubject, yourmessage)
