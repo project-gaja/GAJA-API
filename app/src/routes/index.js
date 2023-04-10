@@ -19,8 +19,7 @@ router.get("/healthCheck", ctrl.healthCheck.register);
     control(POST 방식)
     ex) router.post("/[url명]",[컨트롤러].[메소드명].register);
 */
-router.post("/mail", ctrl.healthCheck.register);
-
+router.post("/send-email", ctrl.mail.sendMail);
 
 // 외부로 내보내기
 module.exports = router;
