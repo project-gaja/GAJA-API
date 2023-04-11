@@ -2,7 +2,8 @@
 
 # dependencies
 /log
-/node_modules
+node_modules
+uploads
 /.pnp
 .pnp.js
 
