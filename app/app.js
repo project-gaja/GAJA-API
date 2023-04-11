@@ -38,4 +38,5 @@ const path = require('path');
 const log4js = require('log4js');
 log4js.configure(path.join(__dirname, 'config/log4js.json'));
 
+app.use('/uploads', express.static('uploads'));
 module.exports = app; 
