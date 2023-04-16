@@ -29,17 +29,6 @@ router.post("/send-email", ctrl.mail.sendMail);
 
 
 
-// 파일 업로드를 처리할 multer 미들웨어 설정
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, 'uploads/');
-//     },
-//     filename: function (req, file, cb) {
-//       const ext = file.originalname;
-//       cb(null, Date.now() + ext);
-//     }
-//   });
-//   const upload = multer({ storage: storage ,dest: "upload/"});
 let storage = multer.diskStorage({
     destination: function(req, file ,callback){
         callback(null, "uploads/")
