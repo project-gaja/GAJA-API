@@ -42,10 +42,10 @@ const fileupload = {
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: '이미지 업로드에 실패했습니다.' });
-    }    
+    }
   }
 };
-  
+
 
 // node-mailer 기능 구현
 const nodemailer = require('nodemailer');
@@ -61,10 +61,10 @@ const transporter = nodemailer.createTransport({
 const mail = {
   sendMail: async (req, res) => {
     const mailOptions = {
-      from: 'eocjf4701@gmail.com',
-      to: 'recipient-email@gmail.com',
-      subject: 'Test Email from Node.js',
-      text: 'Hello, this is a test email from Node.js!'
+      from: 'gaja@gmail.com',
+      to: req.body.email.email,
+      subject: '인증코드 안내입니다.',
+      text: '인증코드 : ' + req.body.code,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
@@ -73,7 +73,7 @@ const mail = {
         res.send('Error sending email!');
       } else {
         console.log('Email sent: ' + info.response);
-        res.send('Email sent successfully!');
+        res.send({ 'code': 200, 'msg': 'success' });
       }
     });
   }
