@@ -25,53 +25,62 @@ router.get("/healthCheck", ctrl.healthCheck.register);
     ex) router.post("/[url명]",[컨트롤러].[메소드명].register);
 */
 router.post("/send-email", ctrl.mail.sendMail);
+router.post("/register", ctrl.user.register);
 
+/*
+    control(PUT 방식)
+    ex) router.put("/[url명]",[컨트롤러].[메소드명].register);
+*/
 
+/*
+    control(DELETE 방식)
+    ex) router.delete("/[url명]",[컨트롤러].[메소드명].register);
+*/
 
 
 let storage = multer.diskStorage({
-    destination: function(req, file ,callback){
-        callback(null, "uploads/")
-    },
-    filename: function(req, file, callback){
-        var mimeType;
+  destination: function (req, file, callback) {
+    callback(null, "uploads/")
+  },
+  filename: function (req, file, callback) {
+    var mimeType;
 
-        switch (file.mimetype) {
-          case "image/jpeg":
-            mimeType = "jpg";
-          break;
-          case "image/png":
-            mimeType = "png";
-          break;
-          case "image/gif":
-            mimeType = "gif";
-          break;
-          case "image/bmp":
-            mimeType = "bmp";
-          break;
-          default:
-            mimeType = "jpg";
-          break;
-        }
-
-        let extension = path.extname(file.originalname);
-        let basename  = path.basename(file.originalname, extension);
-        callback(null, basename + "-" + Date.now() + extension ) ;
+    switch (file.mimetype) {
+      case "image/jpeg":
+        mimeType = "jpg";
+        break;
+      case "image/png":
+        mimeType = "png";
+        break;
+      case "image/gif":
+        mimeType = "gif";
+        break;
+      case "image/bmp":
+        mimeType = "bmp";
+        break;
+      default:
+        mimeType = "jpg";
+        break;
     }
+
+    let extension = path.extname(file.originalname);
+    let basename = path.basename(file.originalname, extension);
+    callback(null, basename + "-" + Date.now() + extension);
+  }
 })
 
 
 
-var upload = multer({storage: storage});
-  
-  // 파일 업로드를 처리하는 라우터
-  router.post('/fileupload', upload.single('image'), (req, res) => {
-    debugger;
-    console.log(req.file);
-    const imageUrl = req.file.path;
-    console.log("imageUrl : " + imageUrl);
-    res.json({ imageUrl: imageUrl });
-  });
+var upload = multer({ storage: storage });
+
+// 파일 업로드를 처리하는 라우터
+router.post('/fileupload', upload.single('image'), (req, res) => {
+  debugger;
+  console.log(req.file);
+  const imageUrl = req.file.path;
+  console.log("imageUrl : " + imageUrl);
+  res.json({ imageUrl: imageUrl });
+});
 
 
 // 외부로 내보내기

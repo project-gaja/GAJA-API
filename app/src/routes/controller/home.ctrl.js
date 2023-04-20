@@ -3,6 +3,7 @@ const com = require("../../common/common");
 const service = require("../service/home.service");
 const logger = require('log4js').getLogger('Controller');
 const multer = require('multer');
+const bcrypt = require('bcrypt');
 
 const healthCheck = {
   register: async (req, res) => {
@@ -79,8 +80,45 @@ const mail = {
   }
 };
 
+const user = {
+  register: async (req, res) => {
+    // req.body.password
+    /*
+      const password = 'mypassword';
+      const saltRounds = 10;
+
+      bcrypt.hash(password, saltRounds, function(err, hash) {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log(hash);
+        }
+      });
+    */
+  },
+  login: async (req, res) => {
+    // 로그인 클릭시 password 인증
+    /*
+      const bcrypt = require('bcrypt');
+  
+      const password = 'mypassword';
+      const hashedPassword = '$2b$10$1ONsZsD53MJcGmSdUGk/Nuqw7mwnY/ejwweaq4t4.Fg85eB4JhL5C';
+  
+      bcrypt.compare(password, hashedPassword, function(err, result) {
+        if (err) {
+          console.error(err);
+        } else if (result === true) {
+          console.log('Passwords match!');
+        } else {
+          console.log('Passwords do not match!');
+        }
+      });
+    */
+  }
+};
 module.exports = {
   healthCheck,
   mail,
-  fileupload
+  fileupload,
+  user
 };
