@@ -82,7 +82,19 @@ const mail = {
 
 const user = {
   register: async (req, res) => {
-    // req.body.password
+    console.log('registerData', req.body);
+    let param = {
+      data: req.body
+    }
+
+    var result = await service.insertMemberInfo(res, param);
+    if (result == "FAIL") {
+      logger.error('ERROR');
+      res.status(400).json(com.returnMsg(false, "실패", result));
+    } else {
+      logger.info('OKAY');
+      res.status(200).json(com.returnMsg(true, "성공", result));
+    }
     /*
       const password = 'mypassword';
       const saltRounds = 10;
