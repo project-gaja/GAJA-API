@@ -12,17 +12,19 @@
     </select>
 
     <!--회원 정보 등록-->
-    <insert id="insertMemInfo">
+    <insert id="insertMemberInfo">
         INSERT INTO GAJADB.T_MEM_INFO_M 
         (
-            id,
+            member_id,
             password,
-            name
+            nick_name,
+            email
         )
         VALUES(
-            #{id},
-            #{password},
-            #{name}
+            (SELECT IFNULL(MAX(mem.member_id) + 1, 1) FROM GAJADB.T_MEM_INFO_M mem),
+            #{psword},
+            #{userName},
+            #{email}
         )
 
     </insert>

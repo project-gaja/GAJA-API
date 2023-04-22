@@ -10,7 +10,6 @@ module.exports = {
         return result;
     },
     insertMemberInfo: async function (res, param) {
-
         var result = await com.insert(res, param, 'commonMapper', 'insertMemberInfo');
 
         return result;

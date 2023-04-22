@@ -82,10 +82,7 @@ const mail = {
 
 const user = {
   register: async (req, res) => {
-    console.log('registerData', req.body);
-    let param = {
-      data: req.body
-    }
+    let param = req.body;
 
     var result = await service.insertMemberInfo(res, param);
     if (result == "FAIL") {
