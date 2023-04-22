@@ -50,6 +50,7 @@ const fileupload = {
 
 // node-mailer 기능 구현
 const nodemailer = require('nodemailer');
+const { hasPointerEvents } = require('@testing-library/user-event/dist/utils');
 // Nodemailer 설정
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -82,8 +83,9 @@ const mail = {
 
 const user = {
   register: async (req, res) => {
+    // password 암호화
+    req.body.psword = await pswordHasy(req.body.psword);
     let param = req.body;
-
     var result = await service.insertMemberInfo(res, param);
     if (result == "FAIL") {
       logger.error('ERROR');
@@ -92,18 +94,6 @@ const user = {
       logger.info('OKAY');
       res.status(200).json(com.returnMsg(true, "성공", result));
     }
-    /*
-      const password = 'mypassword';
-      const saltRounds = 10;
-
-      bcrypt.hash(password, saltRounds, function(err, hash) {
-        if (err) {
-          console.error(err);
-        } else {
-          console.log(hash);
-        }
-      });
-    */
   },
   login: async (req, res) => {
     // 로그인 클릭시 password 인증
@@ -125,6 +115,18 @@ const user = {
     */
   }
 };
+
+const pswordHasy = async (psword) => {
+  const saltRounds = 10;
+
+  try {
+    const hash = await bcrypt.hash(psword, saltRounds);
+    return hash;
+  } catch (err) {
+    throw err;
+  };
+};
+
 module.exports = {
   healthCheck,
   mail,
