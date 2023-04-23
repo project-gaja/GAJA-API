@@ -4,6 +4,8 @@ const service = require("../service/home.service");
 const logger = require('log4js').getLogger('Controller');
 const multer = require('multer');
 const bcrypt = require('bcrypt');
+const passport = require('passport'); //passport 추가
+const NaverStrategy = require('passport-naver').Strategy;
 
 const healthCheck = {
   register: async (req, res) => {
@@ -113,6 +115,8 @@ const user = {
         }
       });
     */
+  },
+  naverlogin: async (req, res) => {
   }
 };
 
