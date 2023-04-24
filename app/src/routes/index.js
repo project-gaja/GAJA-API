@@ -86,7 +86,8 @@ router.get('/kakaologin', function (req, res) {
     control(POST 방식)
     ex) router.post("/[url명]",[컨트롤러].[메소드명].register);
 */
-router.post("/send-email", ctrl.mail.sendMail);
+router.post("/sendEmail", ctrl.mail.sendMail);
+router.post("/emailUniqueCheck", ctrl.user.emailUniqueCheck);
 router.post("/register", ctrl.user.register);
 
 /*

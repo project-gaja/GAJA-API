@@ -26,7 +26,12 @@
             #{userName},
             #{email}
         )
-
     </insert>
 
+    <!--회원 이메일 유효성 체크 -->
+    <select id="selectEmailUniqueCheck">
+        SELECT COUNT(*) as CNT
+          FROM GAJADB.T_MEM_INFO_M
+         WHERE EMAIL = #{email}
+    </select>
 </mapper>

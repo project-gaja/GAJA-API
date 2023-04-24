@@ -37,9 +37,9 @@ module.exports = {
   selectOne: async function (res, param1, param2, param3) {
     const conn = db.init();
 
-
     let format = { language: 'sql', indent: '' };
     let query = global.mapper.getStatement(param2, param3, param1, format);
+
     logger.info('[' + param2 + '.' + param3 + '] ==> ' + 'parameters :' + JSON.stringify(param1));
     logger.info('[' + param2 + '.' + param3 + '] SQL QUERY ==> \n' + query);
 

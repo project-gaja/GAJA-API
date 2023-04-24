@@ -13,5 +13,11 @@ module.exports = {
         var result = await com.insert(res, param, 'commonMapper', 'insertMemberInfo');
 
         return result;
-    }
+    },
+    selectEmailUniqueCheck: async function (res, param) {
+
+        var result = await com.selectOne(res, param, 'commonMapper', 'selectEmailUniqueCheck');
+
+        return result;
+    },
 }

@@ -116,7 +116,18 @@ const user = {
       });
     */
   },
-  naverlogin: async (req, res) => {
+  emailUniqueCheck: async (req, res) => {
+    let param = {
+      email: req.body.email.email
+    }
+    var result = await service.selectEmailUniqueCheck(res, param);
+    if (result == "FAIL") {
+      logger.error('ERROR');
+      res.status(400).json(com.returnMsg(false, "실패", result));
+    } else {
+      logger.info('OKAY');
+      res.status(200).json(com.returnMsg(true, "성공", result));
+    }
   }
 };
 
