@@ -4,6 +4,22 @@ const express = require('express');
 const cors = require("cors");
 const app = express();
 
+// 세션
+const session = require('express-session');
+const crypto = require('crypto');
+const sessionSecret = crypto.randomBytes(32).toString('hex');
+
+app.use(session({
+  secret: sessionSecret, // 세션 데이터를 암호화하는 데 사용하는 키
+  resave: false, // 세션 데이터가 수정되지 않았어도 항상 저장할지 여부
+  saveUninitialized: true, // 세션에 저장할 내용이 없어도 세션 ID를 발급할지 여부
+  cookie: {
+    maxAge: 1800000, // 30분 (밀리초 단위)
+    secure: true
+  }
+}));
+
+
 // 라우팅
 const home = require("./src/routes");
 
