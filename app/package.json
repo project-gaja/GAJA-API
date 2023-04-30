@@ -20,6 +20,7 @@
     "passport-naver-v2": "^2.0.8",
     "path": "^0.12.7",
     "qs": "^6.11.1",
+    "rand-token": "^1.0.1",
     "react-google-login": "^5.2.2"
   },
   "name": "nodejs-login",

@@ -6,7 +6,7 @@ const multer = require('multer');
 const bcrypt = require('bcrypt');
 const passport = require('passport'); //passport 추가
 const NaverStrategy = require('passport-naver').Strategy;
-const jwt = require('jsonwebtoken');
+const jwt = require('../../../modules/jwt');
 
 const healthCheck = {
   register: async (req, res) => {
@@ -99,38 +99,21 @@ const user = {
     }
   },
   login: async (req, res) => {
-    console.log('reqbody', req.body.email);
     let userId = req.body.email;
-    let token = "";
-    // jwt.sign(payload, secretOrPrivateKey, [options, callback])
-    token = jwt.sign(
-      {
-        type: "JWT",
-        userId: userId,
-      },
-      key,
-      {
-        expiresIn: "5m", // 5분후 만료
-        issuer: "토큰발급자",
-      }
-    );
-    console.log('token', token);
-    return;
-
-    req.body.psword = await pswordHasy(req.body.psword);
+    let psword = req.body.psword;
+    /* user의 email을 통해 토큰을 생성! */
+    const jwtToken = await jwt.sign(userId);
+    psword = await pswordHasy(psword);
     let param = {
-      email: req.body.email,
-      psword: req.body.psword,
-      token: token
+      email: userId,
+      psword: psword,
+      token: jwtToken.token,
     }
-
-    console.log('psword', req.body.psword);
 
     let result = await service.selectIsLogin(res, param);
     if (result == "FAIL") {
       logger.error('ERROR');
       res.status(400).json(com.returnMsg(false, "실패", result));
-      res.send(token);
     } else {
       logger.info('OKAY');
       res.status(200).json(com.returnMsg(true, "성공", result));
@@ -182,7 +165,6 @@ const user = {
 
 const pswordHasy = async (psword) => {
   const saltRounds = 10;
-
   try {
     const hash = await bcrypt.hash(psword, saltRounds);
     return hash;

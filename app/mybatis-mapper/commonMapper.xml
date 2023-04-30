@@ -38,6 +38,7 @@
     <!--회원 로그인 가능 여부 체크 -->
     <select id="selectIsLogin">
         SELECT COUNT(*) as CNT
+        ,      #{token} as TOKEN
           FROM GAJADB.T_MEM_INFO_M
          WHERE EMAIL = #{email}
            AND PASSWORD = #{psword}
