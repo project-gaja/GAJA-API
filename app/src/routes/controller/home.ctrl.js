@@ -3,7 +3,8 @@ const com = require("../../common/common");
 const service = require("../service/home.service");
 const logger = require('log4js').getLogger('Controller');
 const multer = require('multer');
-const bcrypt = require('bcrypt');
+const crypto = require('crypto')
+
 const passport = require('passport'); //passport 추가
 const NaverStrategy = require('passport-naver').Strategy;
 const jwt = require('../../../modules/jwt');
@@ -87,7 +88,7 @@ const mail = {
 const user = {
   register: async (req, res) => {
     // password 암호화
-    req.body.psword = await pswordHasy(req.body.psword);
+    req.body.psword = await createHashedPassword(req.body.psword);
     let param = req.body;
     var result = await service.insertMemberInfo(res, param);
     if (result == "FAIL") {
@@ -103,7 +104,7 @@ const user = {
     let psword = req.body.psword;
     /* user의 email을 통해 토큰을 생성! */
     const jwtToken = await jwt.sign(userId);
-    psword = await pswordHasy(psword);
+    psword = await createHashedPassword(psword);
     let param = {
       email: userId,
       psword: psword,
@@ -118,35 +119,6 @@ const user = {
       logger.info('OKAY');
       res.status(200).json(com.returnMsg(true, "성공", result));
     }
-    // 로그인 클릭시 password 인증
-    /*
-      const bcrypt = require('bcrypt');
-  
-      const password = 'mypassword';
-      const hashedPassword = '$2b$10$1ONsZsD53MJcGmSdUGk/Nuqw7mwnY/ejwweaq4t4.Fg85eB4JhL5C';
-  
-      bcrypt.compare(password, hashedPassword, function(err, result) {
-        if (err) {
-          console.error(err);
-        } else if (result === true) {
-          console.log('Passwords match!');
-          req.session.loggedIn = true;
-        } else {
-          console.log('Passwords do not match!');
-        }
-      });
-    */
-
-    /* 추후 다른 로직에서 세션검증할때 참고
-      app.get('/profile', (req, res) => {
-        if (req.session.loggedIn) {
-          + 토큰 발급
-          res.send('Welcome to your profile page!');
-        } else {
-          res.redirect('/login');
-        }
-      });
-    */
   },
   emailUniqueCheck: async (req, res) => {
     let param = {
@@ -163,14 +135,8 @@ const user = {
   }
 };
 
-const pswordHasy = async (psword) => {
-  const saltRounds = 10;
-  try {
-    const hash = await bcrypt.hash(psword, saltRounds);
-    return hash;
-  } catch (err) {
-    throw err;
-  };
+const createHashedPassword = (psword) => {
+  return crypto.createHash("sha512").update(psword).digest("base64");
 };
 
 module.exports = {
