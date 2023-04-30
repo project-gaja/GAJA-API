@@ -10,13 +10,19 @@ module.exports = {
         return result;
     },
     insertMemberInfo: async function (res, param) {
-        var result = await com.insert(res, param, 'commonMapper', 'insertMemberInfo');
+        let result = await com.insert(res, param, 'commonMapper', 'insertMemberInfo');
 
         return result;
     },
     selectEmailUniqueCheck: async function (res, param) {
 
-        var result = await com.selectOne(res, param, 'commonMapper', 'selectEmailUniqueCheck');
+        let result = await com.selectOne(res, param, 'commonMapper', 'selectEmailUniqueCheck');
+
+        return result;
+    },
+    selectIsLogin: async function (res, param) {
+
+        let result = await com.selectOne(res, param, 'commonMapper', 'selectIsLogin');
 
         return result;
     },

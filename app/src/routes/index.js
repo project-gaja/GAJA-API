@@ -81,6 +81,7 @@ router.get('/kakaologin', function (req, res) {
     })
     .then(ans => res.send(ans.data.kakao_account));
 });
+router.get('/google-login', ctrl.mail.sendMail);
 
 /*
     control(POST 방식)
@@ -89,6 +90,7 @@ router.get('/kakaologin', function (req, res) {
 router.post("/sendEmail", ctrl.mail.sendMail);
 router.post("/emailUniqueCheck", ctrl.user.emailUniqueCheck);
 router.post("/register", ctrl.user.register);
+router.post("/login", ctrl.user.login);
 
 /*
     control(PUT 방식)

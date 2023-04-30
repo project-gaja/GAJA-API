@@ -34,4 +34,12 @@
           FROM GAJADB.T_MEM_INFO_M
          WHERE EMAIL = #{email}
     </select>
+
+    <!--회원 로그인 가능 여부 체크 -->
+    <select id="selectIsLogin">
+        SELECT COUNT(*) as CNT
+          FROM GAJADB.T_MEM_INFO_M
+         WHERE EMAIL = #{email}
+           AND PASSWORD = #{psword}
+    </select>
 </mapper>
