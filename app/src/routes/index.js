@@ -7,6 +7,7 @@ const axios = require('axios');
 const qs = require('qs');
 require('dotenv').config();
 var fs = require('fs');
+const { authUtil } = require('../../middlewares/auth');
 // 1. mime 모듈 추가. 서비스하려는 파일의 타입을 알아내기 위해서 필요
 var mime = require('mime');
 
